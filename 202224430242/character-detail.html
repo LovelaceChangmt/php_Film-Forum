@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title><?= htmlspecialchars($character['name']) ?> 演员介绍</title>
+   <style>
+        body {
+            background-color: #f8f5f0;
+            color: #333;
+            font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+        }
+        .detail-container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .character-container{
+        	width:800px;
+        	margin:0 auto;
+        	padding:20px;
+        }
+        .character-image{
+        	wide:100%;
+        	height:400px;
+        	object-fit:cover;
+        	border-radius:8px;
+        	box-shadow:0 4px 8px rgba(0,0,0,0.1);
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 10px;
+            color: #2c3e50;
+            text-decoration: underline;
+        }
+.info-item {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        .info-item:last-child {
+            border-bottom: none;
+        }
+        .info-label {
+            font-weight: bold;
+            color: #555;
+            margin-right: 10px;
+        }
+        
+.back-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #2c3e50;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+}
+.back-button:hover {
+    background: #4a6491;
+}
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1><?= htmlspecialchars($character['name']) ?></h1>
+    </header>
+    
+ <div class="container detail-container">
+        <div class="character-detail">
+            <div class="character-image" style="background-image: url('<?= htmlspecialchars($character['image']) ?>');"></div>
+              <div class="character-info">
+                <div class="info-item">
+                    <span class="info-label">姓名：</span>
+                    <?= htmlspecialchars($character['name']) ?>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">星座：</span>
+                    <?= htmlspecialchars($character['xingzuo']) ?>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">毕业院校：</span>
+                    <?= htmlspecialchars($character['biyeyuanxiao']) ?>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">代表作：</span>
+                    <?= htmlspecialchars($character['daibiaozuo']) ?>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">简介：</span>
+                    <p><?= nl2br(htmlspecialchars($character['description'])) ?></p>
+                </div>
+                <div class="back-button-container">
+                 <a href="detail.php" class="back-button">返回</a>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
